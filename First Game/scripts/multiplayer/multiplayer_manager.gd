@@ -11,5 +11,14 @@ func become_host():
 	
 	multiplayer.multiplayer_peer = server_peer
 	
+	multiplayer.peer_connected.connect(_add_player_to_game)
+	multiplayer.peer_disconnected.connect(_del_player)
+	
 func join():
 	print("New Player Joining")
+
+func _add_player_to_game(id: int):
+	print("Player %s joined the game!" % id)
+	
+func _del_player(id: int):
+	print("Player %s left the game!" % id)
