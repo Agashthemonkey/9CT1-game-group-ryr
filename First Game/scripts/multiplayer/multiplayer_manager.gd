@@ -3,6 +3,8 @@ extends Node
 const SERVER_PORT = 8080
 const SERVER_IP = "127.0.0.1"
 
+var multiplayer_scene = preload("res://scenes/multiplayer_player.tscn")
+
 func become_host():
 	print("Starting Host ...")
 	
@@ -24,6 +26,8 @@ func join():
 
 func _add_player_to_game(id: int):
 	print("Player %s joined the game!" % id)
+	
+	var player_to_add = multiplayer_scene.instantiate()
 	
 func _del_player(id: int):
 	print("Player %s left the game!" % id)

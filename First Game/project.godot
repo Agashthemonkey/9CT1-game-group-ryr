@@ -22,6 +22,7 @@ MultiplayerManager="*res://scripts/multiplayer/multiplayer_manager.gd"
 
 [display]
 
+window/size/always_on_top=true
 window/vsync/vsync_mode=0
 
 [input]
