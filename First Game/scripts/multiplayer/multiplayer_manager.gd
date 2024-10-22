@@ -16,6 +16,11 @@ func become_host():
 	
 func join():
 	print("New Player Joining")
+	
+	var client_peer = ENetMultiplayerPeer.new()
+	client_peer.create_client(SERVER_IP, SERVER_PORT)
+	
+	multiplayer.multiplayer_peer = client_peer
 
 func _add_player_to_game(id: int):
 	print("Player %s joined the game!" % id)
